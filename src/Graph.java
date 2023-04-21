@@ -326,7 +326,7 @@ public class Graph
         Graph g = new Graph( );
         try
         {   	
-            FileReader fin = new FileReader(args[0]);
+            FileReader fin = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/src/CurrentGraph.txt");
             Scanner graphFile = new Scanner( fin );
             
             // Read the edges and insert
@@ -342,25 +342,26 @@ public class Graph
                     {
                         System.err.println( "Skipping ill-formatted line " + line );
                         continue;
+                   }
+                   String source  = st.nextToken( );
+                   String dest    = st.nextToken( );
+                   int    cost    = Integer.parseInt( st.nextToken( ) );
+                   g.addEdge( source, dest, cost );
+               }
+               catch( NumberFormatException e )
+                    { 
+                        System.err.println( "Skipping ill-formatted line " + line ); 
                     }
-                    String source  = st.nextToken( );
-                    String dest    = st.nextToken( );
-                    int    cost    = Integer.parseInt( st.nextToken( ) );
-                    g.addEdge( source, dest, cost );
-                }
-                catch( NumberFormatException e )
-                  { System.err.println( "Skipping ill-formatted line " + line ); }
-             }
-             graphFile.close();
-         }
-         catch( IOException e )
-           { System.err.println( e ); }
-
-         System.out.println( "File read..." );
-         System.out.println( g.vertexMap.size( ) + " vertices" );
-
-         Scanner in = new Scanner( System.in );
-         while( processRequest( in, g ) )
-             ;
+            }
+            graphFile.close();
+        }
+        catch( IOException e )
+            { 
+                System.err.println( e ); 
+            }
+        System.out.println( "File read..." );
+        System.out.println( g.vertexMap.size( ) + " vertices" );
+        Scanner in = new Scanner( System.in );
+        while(processRequest( in, g ));
     }
 }
