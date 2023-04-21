@@ -328,7 +328,7 @@ public class Graph
         {   	
             FileReader fin = new FileReader(args[0]);
             Scanner graphFile = new Scanner( fin );
-
+            
             // Read the edges and insert
             String line;
             while( graphFile.hasNextLine( ) )
@@ -351,6 +351,7 @@ public class Graph
                 catch( NumberFormatException e )
                   { System.err.println( "Skipping ill-formatted line " + line ); }
              }
+             graphFile.close();
          }
          catch( IOException e )
            { System.err.println( e ); }
