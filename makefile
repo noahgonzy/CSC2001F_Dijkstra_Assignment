@@ -1,6 +1,5 @@
-#TokTik Program Make File
+#Program Make File
 #Noah Gonsenhauser
-#11/04/2023
 
 #Showing the make program where all the different commands lie 
 JAVAC=/usr/bin/javac
