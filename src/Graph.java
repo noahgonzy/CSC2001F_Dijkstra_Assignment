@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Queue;
 import java.util.Map;
-import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.PriorityQueue;
@@ -109,37 +101,6 @@ public class Graph
     }
 
     /**
-     * Single-source unweighted shortest-path algorithm.
-     */
-    public void unweighted( String startName )
-    {
-        clearAll( ); 
-
-        Vertex start = vertexMap.get( startName );
-        if( start == null )
-            throw new NoSuchElementException( "Start vertex not found" );
-
-        Queue<Vertex> q = new LinkedList<Vertex>( );
-        q.add( start ); start.dist = 0;
-
-        while( !q.isEmpty( ) )
-        {
-            Vertex v = q.remove( );
-
-            for( Edge e : v.adj )
-            {
-                Vertex w = e.dest;
-                if( w.dist == INFINITY )
-                {
-                    w.dist = v.dist + 1;
-                    w.prev = v;
-                    q.add( w );
-                }
-            }
-        }
-    }
-
-    /**
      * Single-source weighted shortest-path algorithm. (Dijkstra) 
      * using priority queues based on the binary heap
      */
@@ -184,98 +145,6 @@ public class Graph
     }
 
     /**
-     * Single-source negative-weighted shortest-path algorithm.
-     * Bellman-Ford Algorithm
-     */
-    public void negative( String startName )
-    {
-        clearAll( ); 
-
-        Vertex start = vertexMap.get( startName );
-        if( start == null )
-            throw new NoSuchElementException( "Start vertex not found" );
-
-        Queue<Vertex> q = new LinkedList<Vertex>( );
-        q.add( start ); start.dist = 0; start.scratch++;
-
-        while( !q.isEmpty( ) )
-        {
-            Vertex v = q.remove( );
-            if( v.scratch++ > 2 * vertexMap.size( ) )
-                throw new GraphException( "Negative cycle detected" );
-
-            for( Edge e : v.adj )
-            {
-                Vertex w = e.dest;
-                double cvw = e.cost;
-                
-                if( w.dist > v.dist + cvw )
-                {
-                    w.dist = v.dist + cvw;
-                    w.prev = v;
-                      // Enqueue only if not already on the queue
-                    if( w.scratch++ % 2 == 0 )
-                        q.add( w );
-                    else
-                        w.scratch--;  // undo the enqueue increment    
-                }
-            }
-        }
-    }
-
-    /**
-     * Single-source negative-weighted acyclic-graph shortest-path algorithm.
-     */
-    public void acyclic( String startName )
-    {
-        Vertex start = vertexMap.get( startName );
-        if( start == null )
-            throw new NoSuchElementException( "Start vertex not found" );
-
-        clearAll( ); 
-        Queue<Vertex> q = new LinkedList<Vertex>( );
-        start.dist = 0;
-        
-          // Compute the indegrees
-		Collection<Vertex> vertexSet = vertexMap.values( );
-        for( Vertex v : vertexSet )
-            for( Edge e : v.adj )
-                e.dest.scratch++;
-            
-          // Enqueue vertices of indegree zero
-        for( Vertex v : vertexSet )
-            if( v.scratch == 0 )
-                q.add( v );
-       
-        int iterations;
-        for( iterations = 0; !q.isEmpty( ); iterations++ )
-        {
-            Vertex v = q.remove( );
-
-            for( Edge e : v.adj )
-            {
-                Vertex w = e.dest;
-                double cvw = e.cost;
-                
-                if( --w.scratch == 0 )
-                    q.add( w );
-                
-                if( v.dist == INFINITY )
-                    continue;    
-                
-                if( w.dist > v.dist + cvw )
-                {
-                    w.dist = v.dist + cvw;
-                    w.prev = v;
-                }
-            }
-        }
-        
-        if( iterations != vertexMap.size( ) )
-            throw new GraphException( "Graph has a cycle!" );
-    }
-
-    /**
      * Process a request; return false if end of file.
      */
     public static boolean processRequest( Scanner in, Graph g )
@@ -288,21 +157,7 @@ public class Graph
             System.out.print( "Enter destination node:" );
             String destName = in.nextLine( );
 
-            System.out.print( "Enter algorithm (u, d, n, a ): " );
-            String alg = in.nextLine( );
-            
-            if( alg.equals( "u" ) )
-                g.unweighted( startName );
-            else if( alg.equals( "d" ) )    
-            {
-                g.dijkstra( startName );
-                g.printPath( destName );
-            }
-            else if( alg.equals( "n" ) )
-                g.negative( startName );
-            else if( alg.equals( "a" ) )
-                g.acyclic( startName );
-                    
+            g.dijkstra( startName );
             g.printPath( destName );
         }
         catch( NoSuchElementException e )
