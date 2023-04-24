@@ -147,18 +147,17 @@ public class Graph
     /**
      * Process a request; return false if end of file.
      */
-    public static boolean processRequest( Scanner in, Graph g )
+    public static boolean processRequest(Graph g)
     {
         try
         {
-            System.out.print( "Enter start node:" );
-            String startName = in.nextLine( );
-
-            System.out.print( "Enter destination node:" );
-            String destName = in.nextLine( );
+            
+            String startName = "A";
+            String destName = "E";
 
             g.dijkstra( startName );
             g.printPath( destName );
+
         }
         catch( NoSuchElementException e )
           { return false; }
@@ -181,12 +180,12 @@ public class Graph
         Graph g = new Graph( );
         try
         {   	
-            FileReader fin = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/src/CurrentGraph.txt");
-            Scanner graphFile = new Scanner( fin );
+            FileReader f = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/CurrentGraph.txt");
+            Scanner graphFile = new Scanner(f);
             
             // Read the edges and insert
             String line;
-            while( graphFile.hasNextLine( ) )
+            while(graphFile.hasNextLine())
             {
                 line = graphFile.nextLine( );
                 StringTokenizer st = new StringTokenizer( line );
@@ -216,7 +215,6 @@ public class Graph
             }
         System.out.println( "File read..." );
         System.out.println( g.vertexMap.size( ) + " vertices" );
-        Scanner in = new Scanner( System.in );
-        while(processRequest( in, g ));
+        processRequest(g);
     }
 }
