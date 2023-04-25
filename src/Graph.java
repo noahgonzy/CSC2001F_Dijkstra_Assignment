@@ -152,8 +152,8 @@ public class Graph
         try
         {
             
-            String startName = "A";
-            String destName = "E";
+            String startName = "0";
+            String destName = "9";
 
             g.dijkstra( startName );
             g.printPath( destName );
