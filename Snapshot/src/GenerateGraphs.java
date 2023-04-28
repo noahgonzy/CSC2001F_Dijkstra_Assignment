@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GenerateGraphs {
+    public static void main(String[] args) {
+       GenerateNewGraphs(); 
+    }
+
     static int[] vSize = {10,15,20,25,30};
     static int[] eSize = {40,50,60,70,80};
     
