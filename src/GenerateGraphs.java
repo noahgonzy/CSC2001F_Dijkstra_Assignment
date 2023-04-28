@@ -5,17 +5,16 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GenerateGraphs {
-    static int[] vSize = {10,20,30,40,50};
-    static int[] eSize = {20,35,50,65,80};
+    static int[] vSize = {10,15,20,25,30};
+    static int[] eSize = {40,50,60,70,80};
     
     public static void GenerateNewGraphs(){
         try{
-            File f = new File("graphs.txt");
-            if (f.createNewFile()){
-                System.out.println("New Graphs being Created in graphs.txt...");
-            }
-            else{
-                System.out.println("New Graphs being Created... Overwriting current graphs.txt file");
+            
+            Integer numfiles = vSize.length * eSize.length;
+            for(int i = 0; i < numfiles; i++){
+                File f = new File("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + i + ".txt");
+                f.createNewFile();
             }
             
             String eNums = "";
@@ -26,9 +25,12 @@ public class GenerateGraphs {
             for(int b = 0; b < eSize.length; b++){
                 eNums = eNums + " " + Integer.toString(eSize[b]);
             }
+            File infoFile = new File("infoFile.txt");
+            infoFile.createNewFile();
+            FileWriter iw = new FileWriter(infoFile);
+            iw.write(numfiles + "\n" + "Files Exist" + "\n");
             System.out.println("Creating graphs with verticies of lengths:" + vNums);
             System.out.println("for each number of verticies, generating number of edges:" + eNums);
-            FileWriter fw = new FileWriter("graphs.txt");
             Random randc = new Random();
             Random randNode = new Random();
             ArrayList<String> vNodes = new ArrayList<>();
@@ -41,9 +43,10 @@ public class GenerateGraphs {
             String addcheck;
             String addcheckm;
             boolean addnow = false;;
-    
-            for(int i = 0; i < 5; i++){
-                for(int o = 0; o < 5; o++){
+            int graphnum = 0;
+            
+            for(int i = 0; i < vSize.length; i++){
+                for(int o = 0; o < eSize.length; o++){
                     for(int j = 0; j < vSize[i]; j++){
                         vNodes.add(""+j);
                     }
@@ -51,6 +54,7 @@ public class GenerateGraphs {
                     k = 0;
                     while(k < eSize[o]){
                         cost = 1 + randc.nextInt(9);
+                        
                         start = randNode.nextInt(vSize[i]);
                         end = randNode.nextInt(vSize[i]);
                         if((start != end)){
@@ -73,23 +77,25 @@ public class GenerateGraphs {
                             continue;
                         }
                     }
+                    FileWriter fw = new FileWriter("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + graphnum + ".txt");
                     for(int n = 0; n < eNodes.size(); n++){
                         fw.write(eNodes.get(n) + "\n");
                     }
-                    System.out.println("Graph " + (i+1) + " Complete, With: " + vSize[i] + " Verticies, and: " + eSize[o] + " Edges\n");
-                    fw.write("Verticies:Edges for Above Graph: " + vSize[i] + ":" + eSize[o] + " \n");
-                    fw.write("\n");
+                    iw.write("Graph " + graphnum + ", has: " + vSize[i] + " Verticies, and: " + eSize[o] + " Edges\n");
+                    System.out.println("Graph " + (graphnum) + " Complete, With: " + vSize[i] + " Verticies, and: " + eSize[o] + " Edges\n");
+                    fw.write(vSize[i] + ":" + eSize[o]);
+                    graphnum++;
                     vNodes.clear();
                     eNodes.clear();
+                    fw.close();
                 }
             }
-            System.out.println("Graphs Created under graphs.txt");
-            fw.close();
+            System.out.println("Information on files recorded to infoFile.txt");
+            iw.close();
         }
         catch(IOException e){
             System.out.println("an error has occured");
         }
-
-
+        
     }
 }

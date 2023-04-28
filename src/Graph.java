@@ -1,6 +1,9 @@
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.PriorityQueue;
@@ -27,6 +30,13 @@ import java.util.StringTokenizer;
 
 public class Graph
 {
+    static Integer opcount_e = 0;
+    static Integer opcount_v = 0;
+    static Integer opcount_pq = 0;
+    static Integer opcount_pql = 0;
+    static Integer numFiles, counter;
+    static String verticies,edges = "";
+    static ArrayList<String> infotofile = new ArrayList<String>();
     public static final double INFINITY = Double.MAX_VALUE;
     private Map<String,Vertex> vertexMap = new HashMap<String,Vertex>( );
 
@@ -106,6 +116,10 @@ public class Graph
      */
     public void dijkstra( String startName )
     {
+        opcount_pq = 0;
+        opcount_pql = 0;
+        opcount_v = 0;
+        opcount_e = 0;
         PriorityQueue<Path> pq = new PriorityQueue<Path>( );
 
         Vertex start = vertexMap.get( startName );
@@ -118,11 +132,18 @@ public class Graph
         int nodesSeen = 0;
         while( !pq.isEmpty( ) && nodesSeen < vertexMap.size( ) )
         {
+            //Incremeting pq counter
+            opcount_pq += 1;
+            opcount_pql += (int)(Math.log(pq.size()) / Math.log(2));
+
             Path vrec = pq.remove( );
             Vertex v = vrec.dest;
             if( v.scratch != 0 )  // already processed v
                 continue;
-                
+            
+            //vertex is being processed
+            opcount_v++;
+
             v.scratch = 1;
             nodesSeen++;
 
@@ -133,12 +154,16 @@ public class Graph
                 
                 if( cvw < 0 )
                     throw new GraphException( "Graph has negative edges" );
+                
+                //edge is being processed
+                opcount_e ++;
                     
                 if( w.dist > v.dist + cvw )
                 {
                     w.dist = v.dist +cvw;
                     w.prev = v;
                     pq.add( new Path( w, w.dist ) );
+                    opcount_pq += (int)(Math.log(pq.size()) / Math.log(2));
                 }
             }
         }
@@ -153,11 +178,30 @@ public class Graph
         {
             
             String startName = "0";
-            String destName = "9";
+            String destName = String.valueOf(g.vertexMap.size()-1);
 
             g.dijkstra( startName );
+            
+            infotofile.add("graph " + counter);
+            System.out.println("graph " + counter);
+            infotofile.add("Potential Vetexes: " + verticies);
+            System.out.println("Potential Vetexes: " + verticies);
+            infotofile.add("Vertex Map Size: " + g.vertexMap.size());
+            System.out.println("Vertex Map Size: " + g.vertexMap.size());
+            infotofile.add("Edges: " + edges);
+            System.out.println("Edges: " + edges);
+            infotofile.add("Vertex operations: " + opcount_v);
+            System.out.println("Vertex operations: " + opcount_v);
+            infotofile.add("Edge operations: " + opcount_e);
+            System.out.println("Edge operations: " + opcount_e);
+            infotofile.add("Priority Queue operations: " + opcount_pq);
+            System.out.println("Priority Queue operations: " + opcount_pq);
+            infotofile.add("Priority Queue log operations: " + opcount_pql);
+            System.out.println("Priority Queue log operations: " + opcount_pql);
             g.printPath( destName );
-
+            infotofile.add("");
+            System.out.println("");
+            
         }
         catch( NoSuchElementException e )
           { return false; }
@@ -177,44 +221,78 @@ public class Graph
      */
     public static void main( String [ ] args )
     {
-        Graph g = new Graph( );
-        try
-        {   	
-            FileReader f = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/CurrentGraph.txt");
-            Scanner graphFile = new Scanner(f);
-            
-            // Read the edges and insert
-            String line;
-            while(graphFile.hasNextLine())
-            {
-                line = graphFile.nextLine( );
-                StringTokenizer st = new StringTokenizer( line );
-
-                try
-                {
-                    if( st.countTokens( ) != 3 )
-                    {
-                        System.err.println( "Skipping ill-formatted line " + line );
-                        continue;
-                   }
-                   String source  = st.nextToken( );
-                   String dest    = st.nextToken( );
-                   int    cost    = Integer.parseInt( st.nextToken( ) );
-                   g.addEdge( source, dest, cost );
-               }
-               catch( NumberFormatException e )
-                    { 
-                        System.err.println( "Skipping ill-formatted line " + line ); 
-                    }
-            }
-            graphFile.close();
+        try{
+            FileReader fi = new FileReader("infoFile.txt");
+            Scanner ifs = new Scanner(fi);
+            String line = ifs.nextLine();
+            ifs.close();
+            numFiles = Integer.parseInt(line);
         }
-        catch( IOException e )
-            { 
-                System.err.println( e ); 
+        catch(FileNotFoundException e){
+            System.out.println("No Info File, Found");
+        }
+        setGraph();
+    }
+    
+    public static void setGraph(){
+        for(counter = 0; counter < numFiles; counter++){
+            opcount_e = 0;
+            opcount_v = 0;
+            opcount_pq = 0;
+            Graph g = new Graph( );
+            try{   
+                FileReader f = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + counter + ".txt");
+                Scanner graphFile = new Scanner(f);
+
+                // Read the edges and insert
+                    String line;
+                    while(graphFile.hasNextLine())
+                    {
+                        line = graphFile.nextLine( );
+                        if(line.indexOf(":") != -1){
+                            edges = line.substring(line.indexOf(":") +1 , line.length());
+                            verticies = line.substring(0, line.indexOf(":"));
+                            break;
+                        }
+                        StringTokenizer st = new StringTokenizer( line );
+
+                        try
+                        {
+                            if( st.countTokens( ) != 3 )
+                            {
+                                System.err.println( "Skipping ill-formatted line " + line );
+                                continue;
+                           }
+                           String source  = st.nextToken( );
+                           String dest    = st.nextToken( );
+                           int    cost    = Integer.parseInt( st.nextToken( ) );
+                           g.addEdge( source, dest, cost );
+                       }
+                       catch( NumberFormatException e )
+                            { 
+                                System.err.println( "Skipping ill-formatted line " + line ); 
+                            }
+                    }
+                    graphFile.close();
+                }
+                catch( IOException e )
+                    { 
+                        System.err.println( e ); 
+                    }
+                System.out.println( "File read..." );
+                System.out.println( g.vertexMap.size( ) + " vertices" );
+                System.out.println( edges + " edges" );
+                processRequest(g);
             }
-        System.out.println( "File read..." );
-        System.out.println( g.vertexMap.size( ) + " vertices" );
-        processRequest(g);
+            try{
+                FileWriter fw = new FileWriter("Djikstraout.txt");
+                for(int j = 0; j < infotofile.size(); j++){
+                    fw.write(infotofile.get(j) + "\n");
+                }
+                fw.close();
+            }
+            catch(IOException e){
+                System.out.println("An error has occured");
+            }
     }
 }
