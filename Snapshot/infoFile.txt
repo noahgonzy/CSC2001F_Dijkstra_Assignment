@@ -1,0 +1,27 @@
+25
+Files Exist
+Graph 0, has: 10 Verticies, and: 40 Edges
+Graph 1, has: 10 Verticies, and: 50 Edges
+Graph 2, has: 10 Verticies, and: 60 Edges
+Graph 3, has: 10 Verticies, and: 70 Edges
+Graph 4, has: 10 Verticies, and: 80 Edges
+Graph 5, has: 15 Verticies, and: 40 Edges
+Graph 6, has: 15 Verticies, and: 50 Edges
+Graph 7, has: 15 Verticies, and: 60 Edges
+Graph 8, has: 15 Verticies, and: 70 Edges
+Graph 9, has: 15 Verticies, and: 80 Edges
+Graph 10, has: 20 Verticies, and: 40 Edges
+Graph 11, has: 20 Verticies, and: 50 Edges
+Graph 12, has: 20 Verticies, and: 60 Edges
+Graph 13, has: 20 Verticies, and: 70 Edges
+Graph 14, has: 20 Verticies, and: 80 Edges
+Graph 15, has: 25 Verticies, and: 40 Edges
+Graph 16, has: 25 Verticies, and: 50 Edges
+Graph 17, has: 25 Verticies, and: 60 Edges
+Graph 18, has: 25 Verticies, and: 70 Edges
+Graph 19, has: 25 Verticies, and: 80 Edges
+Graph 20, has: 30 Verticies, and: 40 Edges
+Graph 21, has: 30 Verticies, and: 50 Edges
+Graph 22, has: 30 Verticies, and: 60 Edges
+Graph 23, has: 30 Verticies, and: 70 Edges
+Graph 24, has: 30 Verticies, and: 80 Edges
