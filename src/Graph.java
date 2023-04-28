@@ -222,7 +222,7 @@ public class Graph
     public static void main( String [ ] args )
     {
         try{
-            FileReader fi = new FileReader("infoFile.txt");
+            FileReader fi = new FileReader("data/infoFile.txt");
             Scanner ifs = new Scanner(fi);
             String line = ifs.nextLine();
             ifs.close();
