@@ -241,7 +241,7 @@ public class Graph
             opcount_pq = 0;
             Graph g = new Graph( );
             try{   
-                FileReader f = new FileReader("graphs/graph" + counter + ".txt");
+                FileReader f = new FileReader("data/graph" + counter + ".txt");
                 Scanner graphFile = new Scanner(f);
 
                 // Read the edges and insert

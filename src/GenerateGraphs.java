@@ -13,7 +13,7 @@ public class GenerateGraphs {
             
             Integer numfiles = vSize.length * eSize.length;
             for(int i = 0; i < numfiles; i++){
-                File f = new File("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + i + ".txt");
+                File f = new File("data/graph" + i + ".txt");
                 f.createNewFile();
             }
             
@@ -25,7 +25,7 @@ public class GenerateGraphs {
             for(int b = 0; b < eSize.length; b++){
                 eNums = eNums + " " + Integer.toString(eSize[b]);
             }
-            File infoFile = new File("infoFile.txt");
+            File infoFile = new File("data/infoFile.txt");
             infoFile.createNewFile();
             FileWriter iw = new FileWriter(infoFile);
             iw.write(numfiles + "\n" + "Files Exist" + "\n");
@@ -77,7 +77,7 @@ public class GenerateGraphs {
                             continue;
                         }
                     }
-                    FileWriter fw = new FileWriter("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + graphnum + ".txt");
+                    FileWriter fw = new FileWriter("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/data/graph" + graphnum + ".txt");
                     for(int n = 0; n < eNodes.size(); n++){
                         fw.write(eNodes.get(n) + "\n");
                     }
