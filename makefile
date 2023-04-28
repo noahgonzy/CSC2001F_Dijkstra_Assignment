@@ -33,6 +33,7 @@ default: $(CLASS_FILES)
 clean:
 	rm $(BINDIR)/*.class
 	rm -r $(DOCDIR)/*
+	rm Djikstraout.txt
 
 #this runs the same commands as default when run, but also runs the program
 run: $(CLASS_FILES)
