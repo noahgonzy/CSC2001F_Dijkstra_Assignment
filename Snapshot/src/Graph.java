@@ -222,7 +222,7 @@ public class Graph
     public static void main( String [ ] args )
     {
         try{
-            FileReader fi = new FileReader("infoFile.txt");
+            FileReader fi = new FileReader("data/infoFile.txt");
             Scanner ifs = new Scanner(fi);
             String line = ifs.nextLine();
             ifs.close();
@@ -241,7 +241,7 @@ public class Graph
             opcount_pq = 0;
             Graph g = new Graph( );
             try{   
-                FileReader f = new FileReader("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/graphs/graph" + counter + ".txt");
+                FileReader f = new FileReader("data/graph" + counter + ".txt");
                 Scanner graphFile = new Scanner(f);
 
                 // Read the edges and insert
