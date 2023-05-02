@@ -8,21 +8,24 @@ public class GenerateGraphs {
     public static void main(String[] args) {
        GenerateNewGraphs(); 
     }
-
-    static int[] vSize = {10,15,20,25,30};
-    static int[] eSize = {40,50,60,70,80};
     
     public static void GenerateNewGraphs(){
+        int[] vSize = new int[]{10,20,30,40,50};
+        int[] eSize =  new int[]{20,35,50,65,80};
+
+        System.out.println(vSize[3]);
         try{
-            
             Integer numfiles = vSize.length * eSize.length;
             for(int i = 0; i < numfiles; i++){
                 File f = new File("data/graph" + i + ".txt");
                 f.createNewFile();
             }
-            
-            String eNums = "";
+
             String vNums = "";
+            String eNums = "";
+            
+            
+            System.out.println("");
             for(int b = 0; b < vSize.length; b++){
                 vNums = vNums + " " + Integer.toString(vSize[b]);
             }
