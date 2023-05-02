@@ -65,8 +65,9 @@ public class GenerateGraphs {
                             addnow = true;
                             toadd = start + " " + end + " " + cost;
                             for(int m = 0; m < eNodes.size(); m ++){
-                                addcheck = toadd.substring(0, 3);
-                                addcheckm = eNodes.get(m).substring(0, 3);
+                                
+                                addcheck = toadd.substring(0, toadd.length()-2);
+                                addcheckm = eNodes.get(m).substring(0, eNodes.get(m).length()-2);
                                 if(addcheck.equals(addcheckm)){
                                     addnow = false;
                                     break;
@@ -81,7 +82,7 @@ public class GenerateGraphs {
                             continue;
                         }
                     }
-                    FileWriter fw = new FileWriter("/Users/noahgonsenhauser/Dropbox/UCT/CSC2001F/Assignment5/data/graph" + graphnum + ".txt");
+                    FileWriter fw = new FileWriter("data/graph" + graphnum + ".txt");
                     for(int n = 0; n < eNodes.size(); n++){
                         fw.write(eNodes.get(n) + "\n");
                     }

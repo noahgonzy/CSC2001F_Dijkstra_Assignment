@@ -1,7 +1,0 @@
-are we supposed to be running djikstras algorithm on each graph until it finds a path?
-
-can we have some graphs that generate only 19 instead of 20 verticies for example?
-
-am i counting the number of edge processes and vertex processes in the right place?
-
-surely when using V=50 and E=20 like in the example, the program wouldn't see 50 vertexes? thus it's unusable data?
