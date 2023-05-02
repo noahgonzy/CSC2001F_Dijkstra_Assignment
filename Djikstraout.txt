@@ -1,224 +1,450 @@
 graph 0
 Potential Vetexes: 10
 Vertex Map Size: 10
-Edges: 20
-Vertex operations: 9
-Edge operations: 17
-Priority Queue operations: 19
-Priority Queue log operations: 10
+Edges: 26
+Vertex operations: 10
+Edge operations: 26
+Priority Queue operations: 23
+Priority Queue log operations: 13
 
 graph 1
 Potential Vetexes: 10
 Vertex Map Size: 10
-Edges: 35
+Edges: 32
 Vertex operations: 10
-Edge operations: 35
-Priority Queue operations: 25
-Priority Queue log operations: 15
+Edge operations: 32
+Priority Queue operations: 16
+Priority Queue log operations: 6
 
 graph 2
+Potential Vetexes: 10
+Vertex Map Size: 10
+Edges: 38
+Vertex operations: 10
+Edge operations: 38
+Priority Queue operations: 31
+Priority Queue log operations: 20
+
+graph 3
+Potential Vetexes: 10
+Vertex Map Size: 10
+Edges: 44
+Vertex operations: 10
+Edge operations: 44
+Priority Queue operations: 33
+Priority Queue log operations: 21
+
+graph 4
 Potential Vetexes: 10
 Vertex Map Size: 10
 Edges: 50
 Vertex operations: 10
 Edge operations: 50
-Priority Queue operations: 26
-Priority Queue log operations: 15
+Priority Queue operations: 34
+Priority Queue log operations: 22
 
-graph 3
+graph 5
 Potential Vetexes: 10
 Vertex Map Size: 10
-Edges: 65
+Edges: 56
 Vertex operations: 10
-Edge operations: 65
-Priority Queue operations: 49
-Priority Queue log operations: 32
+Edge operations: 56
+Priority Queue operations: 37
+Priority Queue log operations: 24
 
-graph 4
+graph 6
+Potential Vetexes: 10
+Vertex Map Size: 10
+Edges: 62
+Vertex operations: 10
+Edge operations: 62
+Priority Queue operations: 38
+Priority Queue log operations: 25
+
+graph 7
+Potential Vetexes: 10
+Vertex Map Size: 10
+Edges: 68
+Vertex operations: 10
+Edge operations: 68
+Priority Queue operations: 29
+Priority Queue log operations: 18
+
+graph 8
+Potential Vetexes: 10
+Vertex Map Size: 10
+Edges: 74
+Vertex operations: 10
+Edge operations: 74
+Priority Queue operations: 52
+Priority Queue log operations: 33
+
+graph 9
 Potential Vetexes: 10
 Vertex Map Size: 10
 Edges: 80
 Vertex operations: 10
 Edge operations: 80
-Priority Queue operations: 43
-Priority Queue log operations: 29
-
-graph 5
-Potential Vetexes: 20
-Vertex Map Size: 19
-Edges: 20
-Vertex operations: 4
-Edge operations: 3
-Priority Queue operations: 4
-Priority Queue log operations: 0
-
-graph 6
-Potential Vetexes: 20
-Vertex Map Size: 20
-Edges: 35
-Vertex operations: 12
-Edge operations: 20
-Priority Queue operations: 28
-Priority Queue log operations: 16
-
-graph 7
-Potential Vetexes: 20
-Vertex Map Size: 20
-Edges: 50
-Vertex operations: 17
-Edge operations: 47
-Priority Queue operations: 52
-Priority Queue log operations: 33
-
-graph 8
-Potential Vetexes: 20
-Vertex Map Size: 20
-Edges: 65
-Vertex operations: 19
-Edge operations: 64
-Priority Queue operations: 71
-Priority Queue log operations: 48
-
-graph 9
-Potential Vetexes: 20
-Vertex Map Size: 20
-Edges: 80
-Vertex operations: 18
-Edge operations: 78
-Priority Queue operations: 77
-Priority Queue log operations: 54
+Priority Queue operations: 53
+Priority Queue log operations: 27
 
 graph 10
-Potential Vetexes: 30
-Vertex Map Size: 26
-Edges: 20
-Vertex operations: 1
-Edge operations: 0
-Priority Queue operations: 1
-Priority Queue log operations: 0
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 104
+Vertex operations: 20
+Edge operations: 104
+Priority Queue operations: 87
+Priority Queue log operations: 62
 
 graph 11
-Potential Vetexes: 30
-Vertex Map Size: 29
-Edges: 35
-Vertex operations: 19
-Edge operations: 23
-Priority Queue operations: 30
-Priority Queue log operations: 10
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 128
+Vertex operations: 20
+Edge operations: 128
+Priority Queue operations: 99
+Priority Queue log operations: 72
 
 graph 12
-Potential Vetexes: 30
-Vertex Map Size: 30
-Edges: 50
-Vertex operations: 18
-Edge operations: 30
-Priority Queue operations: 49
-Priority Queue log operations: 30
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 152
+Vertex operations: 20
+Edge operations: 152
+Priority Queue operations: 121
+Priority Queue log operations: 79
 
 graph 13
-Potential Vetexes: 30
-Vertex Map Size: 30
-Edges: 65
-Vertex operations: 25
-Edge operations: 60
-Priority Queue operations: 79
-Priority Queue log operations: 53
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 176
+Vertex operations: 20
+Edge operations: 176
+Priority Queue operations: 119
+Priority Queue log operations: 73
 
 graph 14
-Potential Vetexes: 30
-Vertex Map Size: 30
-Edges: 80
-Vertex operations: 29
-Edge operations: 79
-Priority Queue operations: 99
-Priority Queue log operations: 68
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 200
+Vertex operations: 20
+Edge operations: 200
+Priority Queue operations: 114
+Priority Queue log operations: 84
 
 graph 15
-Potential Vetexes: 40
-Vertex Map Size: 29
-Edges: 20
-Vertex operations: 2
-Edge operations: 1
-Priority Queue operations: 2
-Priority Queue log operations: 0
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 224
+Vertex operations: 20
+Edge operations: 224
+Priority Queue operations: 115
+Priority Queue log operations: 77
 
 graph 16
-Potential Vetexes: 40
-Vertex Map Size: 36
-Edges: 35
-Vertex operations: 3
-Edge operations: 2
-Priority Queue operations: 4
-Priority Queue log operations: 1
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 248
+Vertex operations: 20
+Edge operations: 248
+Priority Queue operations: 117
+Priority Queue log operations: 72
 
 graph 17
-Potential Vetexes: 40
-Vertex Map Size: 40
-Edges: 50
-Vertex operations: 17
-Edge operations: 20
-Priority Queue operations: 38
-Priority Queue log operations: 21
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 272
+Vertex operations: 20
+Edge operations: 272
+Priority Queue operations: 148
+Priority Queue log operations: 109
 
 graph 18
-Potential Vetexes: 40
-Vertex Map Size: 40
-Edges: 65
-Vertex operations: 26
-Edge operations: 42
-Priority Queue operations: 75
-Priority Queue log operations: 48
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 296
+Vertex operations: 20
+Edge operations: 296
+Priority Queue operations: 126
+Priority Queue log operations: 86
 
 graph 19
-Potential Vetexes: 40
-Vertex Map Size: 40
-Edges: 80
-Vertex operations: 23
-Edge operations: 39
-Priority Queue operations: 68
-Priority Queue log operations: 44
+Potential Vetexes: 20
+Vertex Map Size: 20
+Edges: 320
+Vertex operations: 20
+Edge operations: 320
+Priority Queue operations: 159
+Priority Queue log operations: 96
 
 graph 20
-Potential Vetexes: 50
+Potential Vetexes: 30
 Vertex Map Size: 30
-Edges: 20
-Vertex operations: 2
-Edge operations: 1
-Priority Queue operations: 2
-Priority Queue log operations: 0
+Edges: 234
+Vertex operations: 30
+Edge operations: 234
+Priority Queue operations: 219
+Priority Queue log operations: 142
+
 graph 21
-Potential Vetexes: 50
-Vertex Map Size: 40
-Edges: 35
-Vertex operations: 1
-Edge operations: 0
-Priority Queue operations: 1
-Priority Queue log operations: 0
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 288
+Vertex operations: 30
+Edge operations: 288
+Priority Queue operations: 225
+Priority Queue log operations: 154
 
 graph 22
-Potential Vetexes: 50
-Vertex Map Size: 47
-Edges: 50
-Vertex operations: 1
-Edge operations: 0
-Priority Queue operations: 1
-Priority Queue log operations: 0
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 342
+Vertex operations: 30
+Edge operations: 342
+Priority Queue operations: 214
+Priority Queue log operations: 163
 
 graph 23
-Potential Vetexes: 50
-Vertex Map Size: 50
-Edges: 65
-Vertex operations: 32
-Edge operations: 46
-Priority Queue operations: 82
-Priority Queue log operations: 48
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 396
+Vertex operations: 30
+Edge operations: 396
+Priority Queue operations: 279
+Priority Queue log operations: 181
 
 graph 24
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 450
+Vertex operations: 30
+Edge operations: 450
+Priority Queue operations: 249
+Priority Queue log operations: 169
+
+graph 25
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 504
+Vertex operations: 30
+Edge operations: 504
+Priority Queue operations: 243
+Priority Queue log operations: 151
+
+graph 26
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 558
+Vertex operations: 30
+Edge operations: 558
+Priority Queue operations: 245
+Priority Queue log operations: 174
+
+graph 27
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 612
+Vertex operations: 30
+Edge operations: 612
+Priority Queue operations: 272
+Priority Queue log operations: 163
+
+graph 28
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 666
+Vertex operations: 30
+Edge operations: 666
+Priority Queue operations: 262
+Priority Queue log operations: 164
+
+graph 29
+Potential Vetexes: 30
+Vertex Map Size: 30
+Edges: 720
+Vertex operations: 30
+Edge operations: 720
+Priority Queue operations: 292
+Priority Queue log operations: 186
+
+graph 30
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 416
+Vertex operations: 40
+Edge operations: 416
+Priority Queue operations: 281
+Priority Queue log operations: 222
+
+graph 31
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 512
+Vertex operations: 40
+Edge operations: 512
+Priority Queue operations: 318
+Priority Queue log operations: 243
+
+graph 32
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 608
+Vertex operations: 40
+Edge operations: 608
+Priority Queue operations: 380
+Priority Queue log operations: 237
+
+graph 33
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 704
+Vertex operations: 40
+Edge operations: 704
+Priority Queue operations: 395
+Priority Queue log operations: 250
+
+graph 34
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 800
+Vertex operations: 40
+Edge operations: 800
+Priority Queue operations: 371
+Priority Queue log operations: 236
+
+graph 35
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 896
+Vertex operations: 40
+Edge operations: 896
+Priority Queue operations: 384
+Priority Queue log operations: 221
+
+graph 36
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 992
+Vertex operations: 40
+Edge operations: 992
+Priority Queue operations: 454
+Priority Queue log operations: 249
+
+graph 37
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 1088
+Vertex operations: 40
+Edge operations: 1088
+Priority Queue operations: 355
+Priority Queue log operations: 229
+
+graph 38
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 1184
+Vertex operations: 40
+Edge operations: 1184
+Priority Queue operations: 421
+Priority Queue log operations: 233
+
+graph 39
+Potential Vetexes: 40
+Vertex Map Size: 40
+Edges: 1280
+Vertex operations: 40
+Edge operations: 1280
+Priority Queue operations: 431
+Priority Queue log operations: 242
+
+graph 40
 Potential Vetexes: 50
 Vertex Map Size: 50
-Edges: 80
-Vertex operations: 34
-Edge operations: 53
-Priority Queue operations: 97
-Priority Queue log operations: 62
+Edges: 650
+Vertex operations: 50
+Edge operations: 650
+Priority Queue operations: 412
+Priority Queue log operations: 276
+
+graph 41
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 800
+Vertex operations: 50
+Edge operations: 800
+Priority Queue operations: 441
+Priority Queue log operations: 310
+
+graph 42
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 950
+Vertex operations: 50
+Edge operations: 950
+Priority Queue operations: 530
+Priority Queue log operations: 351
+
+graph 43
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1100
+Vertex operations: 50
+Edge operations: 1100
+Priority Queue operations: 561
+Priority Queue log operations: 370
+
+graph 44
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1250
+Vertex operations: 50
+Edge operations: 1250
+Priority Queue operations: 542
+Priority Queue log operations: 337
+
+graph 45
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1400
+Vertex operations: 50
+Edge operations: 1400
+Priority Queue operations: 611
+Priority Queue log operations: 326
+
+graph 46
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1550
+Vertex operations: 50
+Edge operations: 1550
+Priority Queue operations: 545
+Priority Queue log operations: 315
+
+graph 47
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1700
+Vertex operations: 50
+Edge operations: 1700
+Priority Queue operations: 600
+Priority Queue log operations: 350
+
+graph 48
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 1850
+Vertex operations: 50
+Edge operations: 1850
+Priority Queue operations: 556
+Priority Queue log operations: 333
+
+graph 49
+Potential Vetexes: 50
+Vertex Map Size: 50
+Edges: 2000
+Vertex operations: 50
+Edge operations: 2000
+Priority Queue operations: 580
+Priority Queue log operations: 337
 

@@ -198,8 +198,8 @@ public class Graph
             System.out.println("Priority Queue operations: " + opcount_pq);
             infotofile.add("Priority Queue log operations: " + opcount_pql);
             System.out.println("Priority Queue log operations: " + opcount_pql);
-            g.printPath( destName );
             infotofile.add("");
+            g.printPath( destName );
             System.out.println("");
             
         }

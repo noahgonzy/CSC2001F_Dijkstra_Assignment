@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.lang.Math;
 
 public class GenerateGraphs {
     public static void main(String[] args) {
@@ -11,9 +12,8 @@ public class GenerateGraphs {
     
     public static void GenerateNewGraphs(){
         int[] vSize = new int[]{10,20,30,40,50};
-        int[] eSize =  new int[]{20,35,50,65,80};
+        int[] eSize = new int[10];
 
-        System.out.println(vSize[3]);
         try{
             Integer numfiles = vSize.length * eSize.length;
             for(int i = 0; i < numfiles; i++){
@@ -21,23 +21,10 @@ public class GenerateGraphs {
                 f.createNewFile();
             }
 
-            String vNums = "";
-            String eNums = "";
-            
-            
-            System.out.println("");
-            for(int b = 0; b < vSize.length; b++){
-                vNums = vNums + " " + Integer.toString(vSize[b]);
-            }
-            for(int b = 0; b < eSize.length; b++){
-                eNums = eNums + " " + Integer.toString(eSize[b]);
-            }
             File infoFile = new File("data/infoFile.txt");
             infoFile.createNewFile();
             FileWriter iw = new FileWriter(infoFile);
             iw.write(numfiles + "\n" + "Files Exist" + "\n");
-            System.out.println("Creating graphs with verticies of lengths:" + vNums);
-            System.out.println("for each number of verticies, generating number of edges:" + eNums);
             Random randc = new Random();
             Random randNode = new Random();
             ArrayList<String> vNodes = new ArrayList<>();
@@ -51,8 +38,18 @@ public class GenerateGraphs {
             String addcheckm;
             boolean addnow = false;;
             int graphnum = 0;
+            double edgenummath;
             
             for(int i = 0; i < vSize.length; i++){
+
+                edgenummath = 0.2;
+                for(int h = 0; h < eSize.length; h++){
+                    edgenummath += 0.06;
+                    int numedges = (int)Math.round(Math.pow(vSize[i], 2)*edgenummath);
+                    eSize[h] = numedges;
+                }
+
+                System.out.println(eSize.toString());
                 for(int o = 0; o < eSize.length; o++){
                     for(int j = 0; j < vSize[i]; j++){
                         vNodes.add(""+j);
@@ -68,8 +65,8 @@ public class GenerateGraphs {
                             addnow = true;
                             toadd = start + " " + end + " " + cost;
                             for(int m = 0; m < eNodes.size(); m ++){
-                                addcheck = toadd.substring(0, 3);
-                                addcheckm = eNodes.get(m).substring(0, 3);
+                                addcheck = toadd.substring(0, toadd.length()-2);
+                                addcheckm = eNodes.get(m).substring(0, eNodes.get(m).length()-2);
                                 if(addcheck.equals(addcheckm)){
                                     addnow = false;
                                     break;
