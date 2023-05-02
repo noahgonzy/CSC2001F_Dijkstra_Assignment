@@ -182,23 +182,15 @@ public class Graph
 
             g.dijkstra( startName );
             
-            infotofile.add("graph " + counter);
+            infotofile.add(counter + " " + verticies + " " + g.vertexMap.size() + " " + edges + " " + opcount_v + " " + opcount_e + " " + opcount_pq + " " + opcount_pql);
             System.out.println("graph " + counter);
-            infotofile.add("Potential Vetexes: " + verticies);
             System.out.println("Potential Vetexes: " + verticies);
-            infotofile.add("Vertex Map Size: " + g.vertexMap.size());
             System.out.println("Vertex Map Size: " + g.vertexMap.size());
-            infotofile.add("Edges: " + edges);
             System.out.println("Edges: " + edges);
-            infotofile.add("Vertex operations: " + opcount_v);
             System.out.println("Vertex operations: " + opcount_v);
-            infotofile.add("Edge operations: " + opcount_e);
             System.out.println("Edge operations: " + opcount_e);
-            infotofile.add("Priority Queue operations: " + opcount_pq);
             System.out.println("Priority Queue operations: " + opcount_pq);
-            infotofile.add("Priority Queue log operations: " + opcount_pql);
             System.out.println("Priority Queue log operations: " + opcount_pql);
-            infotofile.add("");
             g.printPath( destName );
             System.out.println("");
             
@@ -286,6 +278,7 @@ public class Graph
             }
             try{
                 FileWriter fw = new FileWriter("Djikstraout.txt");
+                fw.write("graph PotentialVertexes VertexMapSize Edges VertexOperations EdgeOperations PQOperations PQLOperations\n");
                 for(int j = 0; j < infotofile.size(); j++){
                     fw.write(infotofile.get(j) + "\n");
                 }
