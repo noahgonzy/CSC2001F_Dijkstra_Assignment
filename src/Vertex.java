@@ -15,7 +15,7 @@ class Vertex
 
     public void reset( )
     //  { dist = Graph.INFINITY; prev = null; pos = null; scratch = 0; }    
-    { dist = Graph.INFINITY; prev = null; scratch = 0; }
+    { dist = GraphExperiment.INFINITY; prev = null; scratch = 0; }
       
    // public PairingHeap.Position<Path> pos;  // Used for dijkstra2 (Chapter 23)
 }

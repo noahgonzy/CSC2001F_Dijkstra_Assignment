@@ -52,13 +52,13 @@ clean_alt:
 run: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
 	$(JAVA) -cp bin GenerateGraphs
-	$(JAVA) -cp bin Graph
+	$(JAVA) -cp bin GraphExperiment
 
 #this runs the same commands as default when run, this also only runs the graph program 
 #which will only work if data (graphs) already exists
 graph: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
-	$(JAVA) -cp bin Graph
+	$(JAVA) -cp bin GraphExperiment
 
 #this runs the same commands as default when run, this also only runs the GraphGeneration program
 #for if you want the generate the graphs first without running the Dijkstra algorithm on it

@@ -28,7 +28,7 @@ import java.util.StringTokenizer;
 // and to make sure graph satisfies properties needed by each
 // algorithm.  Exceptions are thrown if errors are detected.
 
-public class Graph
+public class GraphExperiment
 {
     static Integer opcount = 0;
     static Integer numFiles, counter;
@@ -166,7 +166,7 @@ public class Graph
      * Processes the request of a given file to find the path from the starting node 
      * to the largest node found in a graph.
      */
-    public static boolean processRequest(Graph g)
+    public static boolean processRequest(GraphExperiment g)
     {
         try
         {
@@ -230,7 +230,7 @@ public class Graph
     public static void setGraph(){
         //program loops through all graph files found to exist in the infoFile
         for(counter = 0; counter < numFiles; counter++){
-            Graph g = new Graph( );
+            GraphExperiment g = new GraphExperiment( );
             try{   
                 FileReader f = new FileReader("data/graph" + counter + ".txt");
                 Scanner graphFile = new Scanner(f);

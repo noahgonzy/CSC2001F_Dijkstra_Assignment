@@ -10,6 +10,7 @@ class Path implements Comparable<Path>
         cost = c;
     }
     
+    
     public int compareTo( Path rhs )
     {
         double otherCost = rhs.cost;
