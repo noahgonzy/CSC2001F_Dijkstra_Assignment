@@ -1,7 +1,7 @@
 do we need a separate run and generate function in the makefile or should it generate
 and run by default.
 
-should my clean delete all graphs
+should my 'clean' function delete all graphs
 
 is my data vaguely accurate
 

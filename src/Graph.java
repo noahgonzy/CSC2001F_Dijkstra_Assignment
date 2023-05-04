@@ -112,7 +112,8 @@ public class Graph
 
     /**
      * Single-source weighted shortest-path algorithm. (Dijkstra) 
-     * using priority queues based on the binary heap
+     * using priority queues based on the binary heap. 
+     * It also resets the edge process, vertex process, priority queue counter, and priority queue log counter to 0.
      */
     public void dijkstra( String startName )
     {
@@ -208,7 +209,7 @@ public class Graph
      * 2. Forms the graph;
      * 3. Repeatedly prompts for two vertices and
      *    runs the shortest path algorithm.
-     * The data file is a sequence of lines of the format
+     * The data file is a sequence of lines of the format:
      *    source destination cost
      */
     public static void main( String [ ] args )
@@ -226,11 +227,11 @@ public class Graph
         setGraph();
     }
     
+    /**
+     * This function actaully assigns all the graphs for the algorithm to run on. 
+     */
     public static void setGraph(){
         for(counter = 0; counter < numFiles; counter++){
-            opcount_e = 0;
-            opcount_v = 0;
-            opcount_pq = 0;
             Graph g = new Graph( );
             try{   
                 FileReader f = new FileReader("data/graph" + counter + ".txt");

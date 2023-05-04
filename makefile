@@ -38,6 +38,11 @@ clean:
 #this runs the same commands as default when run, but also runs the program
 run: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
+	$(JAVA) -cp bin GenerateGraphs
+	$(JAVA) -cp bin Graph
+
+graph: $(CLASS_FILES)
+	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
 	$(JAVA) -cp bin Graph
 
 generate: $(CLASS_FILES)
