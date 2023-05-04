@@ -11,6 +11,7 @@ JAVADOC=/usr/bin/javadoc
 SRCDIR=src
 BINDIR=bin
 DOCDIR=doc
+DATADIR=data
 
 #This code compiles the java files into class files and puts them in the bin directory
 $(BINDIR)/%.class:$(SRCDIR)/%.java
@@ -30,6 +31,12 @@ default: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
 
 #this removes all files from the bin directory and the document directory
+cleanall:
+	rm $(BINDIR)/*.class
+	rm -r $(DOCDIR)/*
+	rm Djikstraout.txt
+	rm -r $(DATADIR)/*
+
 clean:
 	rm $(BINDIR)/*.class
 	rm -r $(DOCDIR)/*
