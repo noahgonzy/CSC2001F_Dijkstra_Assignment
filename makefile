@@ -19,7 +19,7 @@ $(BINDIR)/%.class:$(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
 
 #this points the make file to what the classes are that will be compiles
-CLASSES=Vertex.class Edge.class Path.class GraphException.class Graph.class \
+CLASSES=Vertex.class Edge.class Path.class GraphException.class GraphExperiment.class \
 
 #This creates a substitution reference which will produce a list of file names with the same names but with the directory prefix
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
