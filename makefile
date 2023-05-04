@@ -31,13 +31,13 @@ default: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
 
 #this removes all files from the bin directory and the document directory
-cleanall:
+clean:
 	rm $(BINDIR)/*.class
 	rm -r $(DOCDIR)/*
 	rm Djikstraout.txt
 	rm -r $(DATADIR)/*
 
-clean:
+clean_alt:
 	rm $(BINDIR)/*.class
 	rm -r $(DOCDIR)/*
 	rm Djikstraout.txt
