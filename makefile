@@ -37,14 +37,13 @@ default: $(CLASS_FILES)
 clean:
 	rm -r $(DATADIR)/*
 	rm -r $(DOCDIR)/*
-	rm Djikstraout.txt
 	rm $(BINDIR)/*.class
 
 #this does the same as 'clean' but keeps the data files incase you wanted to rerun the graph program without
 #changing your previously generated data
 clean_alt:
 	rm -r $(DOCDIR)/*
-	rm Djikstraout.txt
+	rm $(DATADIR)/Djikstraout.txt
 	rm $(BINDIR)/*.class
 
 #this runs the same commands as default when run, but also runs the Graph Generation program and then the Pathfinding Program
