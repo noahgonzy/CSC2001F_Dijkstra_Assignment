@@ -17,15 +17,15 @@ public class GenerateGraphs {
      * @param args
      */
     public static void main(String[] args) {
-       GenerateNewGraphs(); 
+       GenerateNewGraphs(new int[]{10,20,30,40,50}); 
     }
     
     /**
      * Graph Generation Function
      */
-    public static void GenerateNewGraphs(){
+    public static void GenerateNewGraphs(int[] varr){
         //array vSize contains the vertexes that graphs will be generated for
-        int[] vSize = new int[]{10,20,30,40,50};
+        int[] vSize = varr;
         int[] eSize = new int[10];
 
         try{
