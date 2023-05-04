@@ -39,3 +39,8 @@ clean:
 run: $(CLASS_FILES)
 	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
 	$(JAVA) -cp bin Graph
+
+generate: $(CLASS_FILES)
+	$(JAVADOC) $(SRCDIR)/*.java -d $(DOCDIR)
+	$(JAVA) -cp bin GenerateGraphs
+
