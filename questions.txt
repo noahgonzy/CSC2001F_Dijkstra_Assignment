@@ -1,1 +1,2 @@
-do we need a separate run and generate function in the makefile
+do we need a separate run and generate function in the makefile or should it generate
+and run by default.
